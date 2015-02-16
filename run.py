@@ -41,12 +41,14 @@ def index():
 
 
 def send_sms(message_body):
-    client = TwilioRestClient()
-    to_number = os.environ['RECEPIENT_PHONE_NUMBER']
-    from_number = os.environ['TWILIO_PHONE_NUMBER']
+  client = TwilioRestClient()
+  phone_numbers = os.environ['RECEPIENT_PHONE_NUMBER'].split(',')
+  from_number = os.environ['TWILIO_PHONE_NUMBER']
+
+  for to_number in phone_numbers:
     client.sms.messages.create(to=to_number,
                                 from_=from_number, body=message_body)
-    return
+  return
 
 
 if __name__ == "__main__":
