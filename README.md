@@ -15,6 +15,9 @@ The message you receive is in the following format: There is an alert for <logen
 ### Setup Environment Variables
 
     heroku config:set RECEPIENT_PHONE_NUMBER=<PHONE NUMBER TO SEND ALERTS TO>
+
+This can be a comma seperated list of phone numbers to send the alerts.
+
     heroku config:set TWILIO_PHONE_NUMBER=<YOUR TWILIO PHONE NUMBER
     heroku config:set TWILIO_ACCOUNT_SID=<TWILIO ACCOUNT SID>
     heroku config:set TWILIO_AUTH_TOKEN=<TWILIO AUTHORIZATION TOKEN>
